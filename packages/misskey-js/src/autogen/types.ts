@@ -17808,6 +17808,10 @@ export type operations = {
         content: {
           'application/json': {
             count: number;
+			List: {
+				Online: object[];
+				Offline: object[];
+			};
           };
         };
       };
