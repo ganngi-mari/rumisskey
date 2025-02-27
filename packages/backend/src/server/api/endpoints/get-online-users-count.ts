@@ -47,7 +47,12 @@ export default class extends Endpoint<typeof meta, typeof paramDef> { // eslint-
 		private userEntityService: UserEntityService
 	) {
 		super(meta, paramDef, async () => {
-			const OnlineList = await this.usersRepository.find({where: {}});
+			const OnlineList = await this.usersRepository.createQueryBuilder('user')
+									.where('user.isExplorable = TRUE')
+									.andWhere('user.isSuspended = FALSE')
+									.limit(100)//←とりま100
+									.getMany();
+
 			let OnlineCount = 0;
 			let OfflineCount = 0;
 			let UserList = {
