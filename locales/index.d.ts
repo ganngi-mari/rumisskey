@@ -1231,7 +1231,7 @@ export interface Locale extends ILocale {
      */
     "startMessaging": string;
     /**
-     * {n}人が読みました
+     * {n}匹が読みました
      */
     "nUsersRead": ParameterizedString<"n">;
     /**
@@ -1851,7 +1851,7 @@ export interface Locale extends ILocale {
      */
     "moderationLogs": string;
     /**
-     * {n}人が投稿
+     * {n}匹が投稿
      */
     "nUsersMentioned": ParameterizedString<"n">;
     /**
@@ -3199,7 +3199,7 @@ export interface Locale extends ILocale {
      */
     "clearCache": string;
     /**
-     * {n}人がオンライン
+     * {n}匹がオンライン
      */
     "onlineUsersCount": ParameterizedString<"n">;
     /**
@@ -4851,27 +4851,27 @@ export interface Locale extends ILocale {
      */
     "fileAttachedOnly": string;
     /**
-     * TLに他の人への返信を含める
+     * TLに他の動物への返信を含める
      */
     "showRepliesToOthersInTimeline": string;
     /**
-     * TLに他の人への返信を含めない
+     * TLに他の動物への返信を含めない
      */
     "hideRepliesToOthersInTimeline": string;
     /**
-     * TLに現在フォロー中の人全員の返信を含めるようにする
+     * TLに現在フォロー中の動物全員の返信を含めるようにする
      */
     "showRepliesToOthersInTimelineAll": string;
     /**
-     * TLに現在フォロー中の人全員の返信を含めないようにする
+     * TLに現在フォロー中の動物全員の返信を含めないようにする
      */
     "hideRepliesToOthersInTimelineAll": string;
     /**
-     * この操作は元に戻せません。本当にTLに現在フォロー中の人全員の返信を含めるようにしますか？
+     * この操作は元に戻せません。本当にTLに現在フォロー中の動物全員の返信を含めるようにしますか？
      */
     "confirmShowRepliesAll": string;
     /**
-     * この操作は元に戻せません。本当にTLに現在フォロー中の人全員の返信を含めないようにしますか？
+     * この操作は元に戻せません。本当にTLに現在フォロー中の動物全員の返信を含めないようにしますか？
      */
     "confirmHideRepliesAll": string;
     /**
@@ -5661,7 +5661,7 @@ export interface Locale extends ILocale {
                  */
                 "public": string;
                 /**
-                 * ホームタイムラインのみに公開。フォロワー・プロフィールを見に来た人・リノートから、他のユーザーも見ることができます。
+                 * ホームタイムラインのみに公開。フォロワー・プロフィールを見に来た動物・リノートから、他のユーザーも見ることができます。
                  */
                 "home": string;
                 /**
@@ -6289,7 +6289,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * 自分のノートが他の人からお気に入りに登録された
+                 * 自分のノートが他の動物からお気に入りに登録された
                  */
                 "description": string;
             };
@@ -6333,7 +6333,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * フォローが10人を超した
+                 * フォローが10匹を超した
                  */
                 "description": string;
             };
@@ -6343,17 +6343,17 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * フォローが50人を超した
+                 * フォローが50匹を超した
                  */
                 "description": string;
             };
             "_following100": {
                 /**
-                 * 友達100人
+                 * 友達100匹
                  */
                 "title": string;
                 /**
-                 * フォローが100人を超した
+                 * フォローが100匹を超した
                  */
                 "description": string;
             };
@@ -6363,7 +6363,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * フォローが300人を超した
+                 * フォローが300匹を超した
                  */
                 "description": string;
             };
@@ -6383,7 +6383,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * フォロワーが10人を超した
+                 * フォロワーが10匹を超した
                  */
                 "description": string;
             };
@@ -6393,7 +6393,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * フォロワーが50人を超した
+                 * フォロワーが50匹を超した
                  */
                 "description": string;
             };
@@ -6403,7 +6403,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * フォロワーが100人を超した
+                 * フォロワーが100匹を超した
                  */
                 "description": string;
             };
@@ -6413,7 +6413,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * フォロワーが300人を超した
+                 * フォロワーが300匹を超した
                  */
                 "description": string;
             };
@@ -6423,7 +6423,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * フォロワーが500人を超した
+                 * フォロワーが500匹を超した
                  */
                 "description": string;
             };
@@ -6433,7 +6433,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * フォロワーが1,000人を超した
+                 * フォロワーが1,000匹を超した
                  */
                 "description": string;
             };
@@ -7547,7 +7547,7 @@ export interface Locale extends ILocale {
          */
         "following": string;
         /**
-         * {n}人が参加中
+         * {n}匹が参加中
          */
         "usersCount": ParameterizedString<"n">;
         /**
@@ -8543,7 +8543,7 @@ export interface Locale extends ILocale {
          */
         "homeTimeline": string;
         /**
-         * 指定した一人または複数のユーザーのノート
+         * 指定した一匹または複数のユーザーのノート
          */
         "users": string;
         /**
@@ -8551,7 +8551,7 @@ export interface Locale extends ILocale {
          */
         "userList": string;
         /**
-         * 指定した一人または複数のユーザーを除いた全てのノート
+         * 指定した一匹または複数のユーザーを除いた全てのノート
          */
         "userBlacklist": string;
     };
@@ -8995,7 +8995,7 @@ export interface Locale extends ILocale {
          */
         "excludeInactiveUsers": string;
         /**
-         * インポートした人による返信をTLに含むようにする
+         * インポートした動物による返信をTLに含むようにする
          */
         "withReplies": string;
     };
@@ -9175,7 +9175,7 @@ export interface Locale extends ILocale {
          */
         "summary": string;
         /**
-         * 非公開に設定するとプロフィールに表示されなくなりますが、URLを知っている人は引き続きアクセスできます。
+         * 非公開に設定するとプロフィールに表示されなくなりますが、URLを知っている動物は引き続きアクセスできます。
          */
         "visibilityDescription": string;
     };
@@ -9469,19 +9469,19 @@ export interface Locale extends ILocale {
          */
         "notificationWillBeDisplayedLikeThis": string;
         /**
-         * {n}人がリアクションしました
+         * {n}匹がリアクションしました
          */
         "reactedBySomeUsers": ParameterizedString<"n">;
         /**
-         * {n}人がいいねしました
+         * {n}匹がいいねしました
          */
         "likedBySomeUsers": ParameterizedString<"n">;
         /**
-         * {n}人がリノートしました
+         * {n}匹がリノートしました
          */
         "renotedBySomeUsers": ParameterizedString<"n">;
         /**
-         * {n}人にフォローされました
+         * {n}匹にフォローされました
          */
         "followedBySomeUsers": ParameterizedString<"n">;
         /**
