@@ -4,29 +4,31 @@ SPDX-License-Identifier: AGPL-3.0-only
 -->
 
 <template>
-	<div data-cy-mkw-onlineUsers :class="[{_panel: !widgetProps.transparent, [$style.pad]: !widgetProps.transparent }]">
-		<div>
-			動物-{{ number(onlineUsersCount) }}匹
+	<div data-cy-mkw-onlineUsers :class="[{_panel: !widgetProps.transparent, [$style.pad]: !widgetProps.transparent }]" style="height: 400px;">
+		<div style="margin: 10px;">
+			動物 — {{ number(onlineUsersCount) }}匹
 			<div>
 				<!--VueのForがこれらしい？-->
-				<div v-for="User in OnlineUserList">
-					<img :src="User.avatarUrl" style="width: 32px; height: 32px; vertical-align: middle;">
-					<span style="color: #41b781; margin-left: 5cqmin;">
-						{{ (function(){
-							if (User.name != null) {
-								return User.name;
-							} else {
-								return User.username;
-							}
-						})() }}
-					</span>
+				<div v-for="User in OnlineUserList" style="width: 290px; text-overflow: ellipsis; white-space: nowrap;">
+					<MkA :class="$style.name" :to="userPage(User)">
+						<img :src="User.avatarUrl" style="width: 32px; height: 32px; vertical-align: middle; border-radius: 5px;">
+						<span style="color: #41b781; margin-left: 5cqmin;">
+							{{ (function(){
+								if (User.name != null) {
+									return User.name;
+								} else {
+									return User.username;
+								}
+							})() }}
+						</span>
+					</MkA>
 				</div>
 			</div>
 		</div>
+		<!--
 		<div>
-			<div>オフライン-{{ number(onlineUsersCount) }}匹</div>
+			<div>オフライン-{{ number(OfflineUserList.length) }}匹</div>
 			<div>
-				<!--VueのForがこれらしい？-->
 				<div v-for="User in OfflineUserList">
 					<img :src="User.avatarUrl" style="width: 32px; height: 32px; vertical-align: middle;">
 					<span style="margin-left: 5cqmin;">
@@ -41,6 +43,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 				</div>
 			</div>
 		</div>
+		-->
 	</div>
 </template>
 
@@ -52,6 +55,7 @@ import { misskeyApi, misskeyApiGet } from '@/scripts/misskey-api.js';
 import { useInterval } from '@@/js/use-interval.js';
 import { i18n } from '@/i18n.js';
 import number from '@/filters/number.js';
+import { userPage } from '@/filters/user.js';
 
 const name = 'onlineUsers';
 
