@@ -47,10 +47,21 @@ export default class extends Endpoint<typeof meta, typeof paramDef> { // eslint-
 		private userEntityService: UserEntityService
 	) {
 		super(meta, paramDef, async () => {
+			const Limit = 100;
+			const OnlineDate = new Date(Date.now() - USER_ONLINE_THRESHOLD);
+
+			//ユーザー取得
 			const OnlineList = await this.usersRepository.createQueryBuilder('user')
-									.where('user.isExplorable = TRUE')
-									.andWhere('user.isSuspended = FALSE')
-									.limit(100)//←とりま100
+									.where("user.isExplorable = TRUE")
+									.andWhere("user.isSuspended = FALSE")
+									.andWhere("user.lastActiveDate > :date", {date: OnlineDate})
+									.limit(Limit)
+									.getMany();
+			const OfflineList = await this.usersRepository.createQueryBuilder('user')
+									.where("user.isExplorable = TRUE")
+									.andWhere("user.isSuspended = FALSE")
+									.andWhere("user.lastActiveDate < :date", {date: OnlineDate})
+									.limit(Limit)
 									.getMany();
 
 			let OnlineCount = 0;
@@ -60,17 +71,18 @@ export default class extends Endpoint<typeof meta, typeof paramDef> { // eslint-
 				Offline: []
 			};
 
+			//オンラインユーザーを集計
 			for (let I = 0; I < OnlineList.length; I++) {
 				const User = await this.userEntityService.pack(OnlineList[I].id);
-				if (User.onlineStatus === "online") {
-					//オンラインなユーザー
-					UserList.Online.push(User);
-					OnlineCount++;
-				} else {
-					//オフラインなユーザー
-					UserList.Offline.push(User);
-					OfflineCount++;
-				}
+				UserList.Online.push(User);
+				OnlineCount++;
+			}
+
+			//オフラインユーザーを集計
+			for (let I = 0; I < OfflineList.length; I++) {
+				const User = await this.userEntityService.pack(OfflineList[I].id);
+				UserList.Offline.push(User);
+				OfflineCount++;
 			}
 
 			return {
