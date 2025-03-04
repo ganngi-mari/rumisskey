@@ -4,7 +4,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 -->
 
 <template>
-	<div data-cy-mkw-onlineUsers :class="[{_panel: !widgetProps.transparent, [$style.pad]: !widgetProps.transparent }]" style="height: 100px;">
+	<div data-cy-mkw-onlineUsers :class="[{_panel: !widgetProps.transparent, [$style.pad]: !widgetProps.transparent }]" style="height: 100px; overflow-y: scroll; overflow-x: hidden;">
 		<div style="margin: 10px;">
 			動物 — {{ number(onlineUsersCount) }}匹
 			<div>
