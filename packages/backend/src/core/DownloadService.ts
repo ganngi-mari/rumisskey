@@ -44,6 +44,7 @@ export class DownloadService {
 		const operationTimeout = 60 * 1000;
 		const maxSize = this.config.maxFileSize;
 
+		/*
 		//hostsを読むように変更
 		const HostsFile = fs.readFileSync("/etc/hosts", "utf-8");
 		for (let I = 0; I < HostsFile.split("\n").length; I++) {
@@ -58,7 +59,7 @@ export class DownloadService {
 					}
 				}
 			}
-		}
+		}*/
 
 		const urlObj = new URL(url);
 		let filename = urlObj.pathname.split('/').pop() ?? 'untitled';
@@ -66,7 +67,7 @@ export class DownloadService {
 		const req = got.stream(url, {
 			headers: {
 				'User-Agent': this.config.userAgent,
-				"host": "rumiserver.com"
+				//"host": "rumiserver.com"
 			},
 			timeout: {
 				lookup: timeout,

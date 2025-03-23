@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
+import type { DriveFilesRepository } from '@/models/_.js';
 import { Inject, Injectable } from '@nestjs/common';
 import * as Redis from 'ioredis';
 import _Ajv from 'ajv';
@@ -49,7 +50,7 @@ import type { CustomEmojiService } from '@/core/CustomEmojiService.js';
 import { AvatarDecorationService } from '@/core/AvatarDecorationService.js';
 import type { OnModuleInit } from '@nestjs/common';
 import type { NoteEntityService } from './NoteEntityService.js';
-import type { DriveFileEntityService } from './DriveFileEntityService.js';
+import { DriveFileEntityService } from './DriveFileEntityService.js';
 import type { PageEntityService } from './PageEntityService.js';
 
 const Ajv = _Ajv.default;
@@ -133,6 +134,9 @@ export class UserEntityService implements OnModuleInit {
 
 		@Inject(DI.userMemosRepository)
 		private userMemosRepository: UserMemoRepository,
+
+		@Inject(DI.driveFilesRepository)
+		private driveFilesRepository: DriveFilesRepository,
 	) {
 	}
 
@@ -472,6 +476,14 @@ export class UserEntityService implements OnModuleInit {
 			})) : null;
 
 		const notificationsInfo = isMe && isDetailed ? await this.getNotificationsInfo(user.id) : null;
+
+		//ローカルユーザーならアイコンのURLをツブス
+		if (user != null && user.avatarId != null) {
+			const IconFileURL = await this.driveFilesRepository.findOneBy({ id: user.avatarId });
+			if (IconFileURL != null) {
+				user.avatarUrl = IconFileURL.url;
+			}
+		}
 
 		const packed = {
 			id: user.id,
