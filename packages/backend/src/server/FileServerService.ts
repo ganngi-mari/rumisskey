@@ -294,6 +294,8 @@ export class FileServerService {
 	private async proxyHandler(request: FastifyRequest<{ Params: { url: string; }; Querystring: { url?: string; }; }>, reply: FastifyReply) {
 		const url = 'url' in request.query ? request.query.url : 'https://' + request.params.url;
 
+		console.log("ababababababa:" + url);
+
 		if (typeof url !== 'string') {
 			reply.code(400);
 			return;

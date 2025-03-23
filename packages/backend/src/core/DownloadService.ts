@@ -8,6 +8,7 @@ import * as stream from 'node:stream/promises';
 import { Inject, Injectable } from '@nestjs/common';
 import chalk from 'chalk';
 import got, * as Got from 'got';
+import dns from "dns";
 import { parse } from 'content-disposition';
 import { DI } from '@/di-symbols.js';
 import type { Config } from '@/config.js';
@@ -43,12 +44,29 @@ export class DownloadService {
 		const operationTimeout = 60 * 1000;
 		const maxSize = this.config.maxFileSize;
 
+		//hostsを読むように変更
+		const HostsFile = fs.readFileSync("/etc/hosts", "utf-8");
+		for (let I = 0; I < HostsFile.split("\n").length; I++) {
+			const Line = HostsFile.split("\n")[I];
+			if (!Line.startsWith("#")) {
+				const Match = Line.match(/(.*)\s+(.*)/);
+				if (Match != null && Match[1] != null && Match[2] != null) {
+					if (url.includes(Match[2])) {
+						this.logger.info(`${Match[2]}を${Match[1]}に置換したぜ！`);
+						url = url.replaceAll(Match[2], Match[1]);
+						break;
+					}
+				}
+			}
+		}
+
 		const urlObj = new URL(url);
 		let filename = urlObj.pathname.split('/').pop() ?? 'untitled';
 
 		const req = got.stream(url, {
 			headers: {
 				'User-Agent': this.config.userAgent,
+				"host": "rumiserver.com"
 			},
 			timeout: {
 				lookup: timeout,
