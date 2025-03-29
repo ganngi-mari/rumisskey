@@ -477,11 +477,13 @@ export class UserEntityService implements OnModuleInit {
 
 		const notificationsInfo = isMe && isDetailed ? await this.getNotificationsInfo(user.id) : null;
 
-		//ローカルユーザーならアイコンのURLをツブス
-		if (user != null && user.avatarId != null) {
-			const IconFileURL = await this.driveFilesRepository.findOneBy({ id: user.avatarId });
-			if (IconFileURL != null) {
-				user.avatarUrl = IconFileURL.url;
+		if (user.host == null) {
+			//ローカルユーザーならアイコンのURLをツブス
+			if (user != null && user.avatarId != null) {
+				const IconFileURL = await this.driveFilesRepository.findOneBy({ id: user.avatarId });
+				if (IconFileURL != null) {
+					user.avatarUrl = IconFileURL.url;
+				}
 			}
 		}
 
