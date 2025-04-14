@@ -149,7 +149,8 @@ export class HttpRequestService {
 		const cache = new CacheableLookup({
 			maxTtl: 3600,	// 1hours
 			errorTtl: 30,	// 30secs
-			lookup: false,	// nativeのdns.lookupにfallbackしない
+			//						↓使えよ殺すぞ
+			//lookup: false,	// nativeのdns.lookupにfallbackしない
 		});
 
 		const agentOption = {
