@@ -39,10 +39,13 @@ SPDX-License-Identifier: AGPL-3.0-only
 
 				<SearchMarker :keywords="['account', 'move', 'migration']">
 					<MkFolder>
+						<!--
 						<template #icon><i class="ti ti-plane"></i></template>
 						<template #label><SearchLabel>{{ i18n.ts.accountMigration }}</SearchLabel></template>
 
 						<XMigration/>
+						-->
+						ニガサナイ
 					</MkFolder>
 				</SearchMarker>
 
