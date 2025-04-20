@@ -174,11 +174,6 @@ export class MiUserProfile {
 	public autoAcceptFollowed: boolean;
 
 	@Column('boolean', {
-		default: false,
-	})
-	public autoFollowBack: boolean;
-
-	@Column('boolean', {
 		default: true,
 	})
 	public blockDeliver: boolean;

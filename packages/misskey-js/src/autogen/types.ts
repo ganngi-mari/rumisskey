@@ -3881,7 +3881,6 @@ export type components = {
       autoSensitive: boolean;
       carefulBot: boolean;
       autoAcceptFollowed: boolean;
-      autoFollowBack: boolean;
       blockDeliver: boolean;
       noCrawle: boolean;
       preventAiLearning: boolean;
@@ -21082,7 +21081,6 @@ export type operations = {
           publicReactions?: boolean;
           carefulBot?: boolean;
           autoAcceptFollowed?: boolean;
-          autoFollowBack?: boolean;
           blockDeliver?: boolean;
           noCrawle?: boolean;
           preventAiLearning?: boolean;
