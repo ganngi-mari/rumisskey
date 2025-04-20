@@ -44,15 +44,15 @@ const text = computed(() => {
 	}
 
 	&.status_active {
-		background: #e4bc48;
+		background: #58d4c9;
 	}
 
 	&.status_offline {
-		background: #ea5353;
+		background: #888;
 	}
 
 	&.status_unknown {
-		background: #888;
+		display: none;
 	}
 }
 </style>
