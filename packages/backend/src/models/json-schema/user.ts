@@ -486,6 +486,14 @@ export const packedMeDetailedOnlySchema = {
 			type: 'boolean',
 			nullable: false, optional: false,
 		},
+		autoFollowBack: {
+			type: 'boolean',
+			nullable: false, optional: false,
+		},
+		blockDeliver: {
+			type: 'boolean',
+			nullable: false, optional: false,
+		},
 		noCrawle: {
 			type: 'boolean',
 			nullable: false, optional: false,
