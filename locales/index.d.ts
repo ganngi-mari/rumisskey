@@ -5282,14 +5282,6 @@ export interface Locale extends ILocale {
      * アクセシビリティ
      */
     "accessibility": string;
-    /**
-     * ブロックしたユーザーにアクティビティを配送する。
-     */
-    "blockDeliver": string;
-    /**
-     * ブロックしたユーザーにアクティビティを配送します。これにより、ブロックしたユーザーはあなたがブロックしたことを知ることができます。
-     */
-    "blockDeliverDescription": string;
     "_accountSettings": {
         /**
          * コンテンツの表示にログインを必須にする

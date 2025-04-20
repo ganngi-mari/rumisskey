@@ -11,7 +11,7 @@ import type { MiBlocking } from '@/models/Blocking.js';
 import { QueueService } from '@/core/QueueService.js';
 import { GlobalEventService } from '@/core/GlobalEventService.js';
 import { DI } from '@/di-symbols.js';
-import type { FollowRequestsRepository, BlockingsRepository, UserListsRepository, UserListMembershipsRepository, UserProfilesRepository } from '@/models/_.js';
+import type { FollowRequestsRepository, BlockingsRepository, UserListsRepository, UserListMembershipsRepository } from '@/models/_.js';
 import Logger from '@/logger.js';
 import { UserEntityService } from '@/core/entities/UserEntityService.js';
 import { ApRendererService } from '@/core/activitypub/ApRendererService.js';
@@ -42,9 +42,6 @@ export class UserBlockingService implements OnModuleInit {
 		@Inject(DI.userListMembershipsRepository)
 		private userListMembershipsRepository: UserListMembershipsRepository,
 
-		@Inject(DI.userProfilesRepository)
-		private userProfilesRepository: UserProfilesRepository,
-		
 		private cacheService: CacheService,
 		private userEntityService: UserEntityService,
 		private idService: IdService,
@@ -91,13 +88,8 @@ export class UserBlockingService implements OnModuleInit {
 		});
 
 		if (this.userEntityService.isLocalUser(blocker) && this.userEntityService.isRemoteUser(blockee)) {
-			// ブロックするユーザーの設定に基づいて、ブロックアクティビティを送信するかどうかを判断
-			const blockerProfile = await this.userProfilesRepository.findOneBy({ userId: blocker.id });
-			
-			if (blockerProfile?.blockDeliver === true) {
-				const content = this.apRendererService.addContext(this.apRendererService.renderBlock(blocking));
-				this.queueService.deliver(blocker, content, blockee.inbox, false);
-			}
+			const content = this.apRendererService.addContext(this.apRendererService.renderBlock(blocking));
+			this.queueService.deliver(blocker, content, blockee.inbox, false);
 		}
 
 		//ブロック通知

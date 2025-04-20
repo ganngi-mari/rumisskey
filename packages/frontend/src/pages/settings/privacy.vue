@@ -21,13 +21,6 @@ SPDX-License-Identifier: AGPL-3.0-only
 			</SearchMarker>
 		</MkDisableSection>
 
-		<SearchMarker :keywords="['block', 'deliver', 'activity']">
-			<MkSwitch v-model="blockDeliver" @update:modelValue="save()">
-				<template #label><SearchLabel>{{ i18n.ts.blockDeliver }}</SearchLabel><span class="_beta">{{ i18n.ts._cherrypick.function }}</span></template>
-				<template #caption><SearchKeyword>{{ i18n.ts.blockDeliverDescription }}</SearchKeyword></template>
-			</MkSwitch>
-		</SearchMarker>
-
 		<SearchMarker :keywords="['reaction', 'public']">
 			<MkSwitch v-model="publicReactions" @update:modelValue="save()">
 				<template #label><SearchLabel>{{ i18n.ts.makeReactionsPublic }}</SearchLabel></template>
@@ -253,8 +246,6 @@ const defaultNoteLocalOnly = computed(defaultStore.makeGetterSetter('defaultNote
 const rememberNoteVisibility = computed(defaultStore.makeGetterSetter('rememberNoteVisibility'));
 const keepCw = computed(defaultStore.makeGetterSetter('keepCw'));
 
-const blockDeliver = ref($i.blockDeliver);
-
 const makeNotesFollowersOnlyBefore_type = computed(() => {
 	if (makeNotesFollowersOnlyBefore.value == null) {
 		return null;
@@ -306,7 +297,6 @@ function save() {
 		publicReactions: !!publicReactions.value,
 		followingVisibility: followingVisibility.value,
 		followersVisibility: followersVisibility.value,
-		blockDeliver: !!blockDeliver.value,
 	});
 }
 
