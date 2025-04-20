@@ -1316,6 +1316,8 @@ markAsSensitiveConfirm: "このメディアをセンシティブとして設定�
 unmarkAsSensitiveConfirm: "このメディアのセンシティブ指定を解除しますか？"
 preferences: "環境設定"
 accessibility: "アクセシビリティ"
+blockDeliver: "ブロックしたユーザーにアクティビティを配送する。"
+blockDeliverDescription: "ブロックしたユーザーにアクティビティを配送します。これにより、ブロックしたユーザーはあなたがブロックしたことを知ることができます。"
 
 _accountSettings:
   requireSigninToViewContents: "コンテンツの表示にログインを必須にする"
