@@ -232,6 +232,7 @@ export default class extends Endpoint<typeof meta, typeof paramDef> { // eslint-
 				emailVerified: profile.emailVerified,
 				followedMessage: profile.followedMessage,
 				autoAcceptFollowed: profile.autoAcceptFollowed,
+				blockDeliver: profile.blockDeliver,
 				noCrawle: profile.noCrawle,
 				preventAiLearning: profile.preventAiLearning,
 				alwaysMarkNsfw: profile.alwaysMarkNsfw,
