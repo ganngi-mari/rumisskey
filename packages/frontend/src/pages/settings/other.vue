@@ -39,10 +39,10 @@ SPDX-License-Identifier: AGPL-3.0-only
 
 				<SearchMarker :keywords="['account', 'move', 'migration']">
 					<MkFolder>
-						<!--
 						<template #icon><i class="ti ti-plane"></i></template>
 						<template #label><SearchLabel>{{ i18n.ts.accountMigration }}</SearchLabel></template>
 
+						<!--
 						<XMigration/>
 						-->
 						ニガサナイ
@@ -55,13 +55,12 @@ SPDX-License-Identifier: AGPL-3.0-only
 						<template #label><SearchLabel>{{ i18n.ts.closeAccount }}</SearchLabel></template>
 
 						<div class="_gaps_m">
-							<!--
 							<FormInfo warn>{{ i18n.ts._accountDelete.mayTakeTime }}</FormInfo>
 							<FormInfo>{{ i18n.ts._accountDelete.sendEmail }}</FormInfo>
 							<MkButton v-if="!$i.isDeleted" danger @click="deleteAccount"><SearchKeyword>{{ i18n.ts._accountDelete.requestAccountDelete }}</SearchKeyword></MkButton>
 							<MkButton v-else disabled>{{ i18n.ts._accountDelete.inProgress }}</MkButton>
-							-->
-							削除できるわけねーだろ、おまえは一生デジタルタトゥーを残し続けるんだ。
+
+							<!--削除できるわけねーだろ、おまえは一生デジタルタトゥーを残し続けるんだ。-->
 						</div>
 					</MkFolder>
 				</SearchMarker>
