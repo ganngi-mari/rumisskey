@@ -6,6 +6,14 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
+ @import url("https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css");
+ @import url("https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-hk@5.2.5/index.min.css");
+
+ $default-font: "Noto Serif HK", -apple-system, BlinkMacSystemFont, system-ui, "Times New Roman", "MS PMincho", "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", serif;
+ $system-font: -apple-system, BlinkMacSystemFont, "Times New Roman", Roboto, "Noto Serif JP", "Yu Mincho", "YuMincho", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", serif;
+ $monospace-font: "Noto Serif HK", Noto Serif HK, "JetBrains Mono", "Fira code", "Fira Mono", Consolas, Menlo, Courier, monospace !important;
+ $code-monospace-font: "JetBrains Mono", "Noto Serif HK", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace !important;
+
 :root {
 	--MI-radius: 12px;
 	--MI-marginFull: 16px;
@@ -33,7 +41,9 @@ html {
 	accent-color: var(--MI_THEME-accent);
 	overflow: auto;
 	overflow-wrap: break-word;
-	font-family: 'Hiragino Maru Gothic Pro', "BIZ UDGothic", Roboto, HelveticaNeue, Arial, sans-serif;
+	font-family: $default-font;
+	// incoming changes from v13
+	// font-family: "Hiragino Maru Gothic Pro", "BIZ UDGothic", Roboto, HelveticaNeue, Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.35;
 	text-size-adjust: 100%;

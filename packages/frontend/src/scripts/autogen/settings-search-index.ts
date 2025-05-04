@@ -206,54 +206,59 @@ export const searchIndexes: SearchIndexItem[] = [
 			},
 			{
 				id: '9gOp28wKG',
+				label: i18n.ts.blockDeliver,
+				keywords: ['block', 'deliver', 'activity', i18n.ts.blockDeliverDescription],
+			},
+			{
+				id: 'CjAkqMhct',
 				label: i18n.ts.makeReactionsPublic,
 				keywords: ['reaction', 'public', i18n.ts.makeReactionsPublicDescription],
 			},
 			{
-				id: 'CjAkqMhct',
+				id: 'bQmNoFUku',
 				label: i18n.ts.followingVisibility,
 				keywords: ['following', 'visibility'],
 			},
 			{
-				id: '4nEwI6LYt',
+				id: '3HiV7Q9u9',
 				label: i18n.ts.followersVisibility,
 				keywords: ['follower', 'visibility'],
 			},
 			{
-				id: 'naMp37wTL',
+				id: 'p0dCVR0UP',
 				label: i18n.ts.hideOnlineStatus,
 				keywords: ['online', 'status', i18n.ts.hideOnlineStatusDescription],
 			},
 			{
-				id: 'p0dCVR0UP',
+				id: 'aceURmNPq',
 				label: i18n.ts.noCrawle,
 				keywords: ['crawle', 'index', 'search', i18n.ts.noCrawleDescription],
 			},
 			{
-				id: 'aceURmNPq',
+				id: 'ahABA0j7u',
 				label: i18n.ts.preventAiLearning,
 				keywords: ['crawle', 'ai', i18n.ts.preventAiLearningDescription],
 			},
 			{
-				id: 'ahABA0j7u',
+				id: 'cyeDbLN8N',
 				label: i18n.ts.makeExplorable,
 				keywords: ['explore', i18n.ts.makeExplorableDescription],
 			},
 			{
-				id: 'cyeDbLN8N',
+				id: 'oStVUYgxW',
 				children: [
 					{
-						id: 'xEYlOghao',
+						id: 'y7g3Tfcqm',
 						label: i18n.ts._accountSettings.requireSigninToViewContents,
 						keywords: ['login', 'signin'],
 					},
 					{
-						id: 'sMmYFCS60',
+						id: 'BzMIVBpL0',
 						label: i18n.ts._accountSettings.makeNotesFollowersOnlyBefore,
 						keywords: ['follower', i18n.ts._accountSettings.makeNotesFollowersOnlyBeforeDescription],
 					},
 					{
-						id: '2prkeWRSd',
+						id: '2hCPIiorI',
 						label: i18n.ts._accountSettings.makeNotesHiddenBefore,
 						keywords: ['hidden', i18n.ts._accountSettings.makeNotesHiddenBeforeDescription],
 					},
@@ -262,17 +267,17 @@ export const searchIndexes: SearchIndexItem[] = [
 				keywords: ['lockdown'],
 			},
 			{
-				id: '37QLEyrtk',
+				id: '1NsOoLOCH',
 				label: i18n.ts.rememberNoteVisibility,
 				keywords: ['remember', 'keep', 'note', 'visibility'],
 			},
 			{
-				id: 'rhKwScbVS',
+				id: 'qEB4zQNUA',
 				label: i18n.ts.defaultNoteVisibility,
 				keywords: ['default', 'note', 'visibility'],
 			},
 			{
-				id: '3EmXVyevo',
+				id: '7fgYEWPdZ',
 				label: i18n.ts.keepCw,
 				keywords: ['remember', 'keep', 'note', 'cw'],
 			},
@@ -463,17 +468,17 @@ export const searchIndexes: SearchIndexItem[] = [
 				keywords: ['account', 'move', 'migration'],
 			},
 			{
-				id: '4BG7nBECm',
+				id: 'nYGwCFcOB',
 				label: i18n.ts.closeAccount,
 				keywords: ['account', 'close', 'delete', i18n.ts._accountDelete.requestAccountDelete],
 			},
 			{
-				id: '2qI6ruPgi',
+				id: 'ozfqNviP3',
 				label: i18n.ts.experimentalFeatures,
 				keywords: ['experimental', 'feature', 'flags'],
 			},
 			{
-				id: 'cIeaax47o',
+				id: 'kSH3FlNTx',
 				label: i18n.ts.developer,
 				keywords: ['developer', 'mode', 'debug'],
 			},
